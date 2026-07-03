@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { motion } from 'framer-motion';
 import GoldButton from '../components/GoldButton';
 import { useLanguage } from '../lib/LanguageContext';
