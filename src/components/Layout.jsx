@@ -12,13 +12,12 @@ export default function Layout() {
     <div className="min-h-screen bg-obsidian text-white">
       <GoldCursor />
       <Navbar />
-      <AnimatePresence mode="wait" initial={false}>
+      <AnimatePresence>
         <motion.main
           key={location.pathname}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.2 }}
         >
           <Outlet />
         </motion.main>
