@@ -1,4 +1,6 @@
 // @ts-nocheck
+// @ts-nocheck
+import React from 'react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingBag } from 'lucide-react';
@@ -8,6 +10,26 @@ import { useLanguage } from '../lib/LanguageContext';
 import { SHOP_PRODUCTS } from '../lib/images';
 
 const products = SHOP_PRODUCTS;
+
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { error: null };
+  }
+  componentDidCatch(error) {
+    this.setState({ error });
+  }
+  render() {
+    if (this.state.error) {
+      return (
+        <div style={{background:'white',color:'red',padding:'2rem',margin:'2rem',fontSize:'14px',whiteSpace:'pre-wrap'}}>
+          <strong>RENDER ERROR:</strong>{'\n'}{this.state.error.toString()}{'\n'}{this.state.error.stack}
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
 
 export default function Shop() {
   const { t } = useLanguage();
@@ -33,6 +55,7 @@ export default function Shop() {
   const cartCount = cart.reduce((a, b) => a + b.qty, 0);
 
   return (
+    <ErrorBoundary>
     <div className="min-h-screen bg-obsidian pt-20">
       {/* Header */}
       <div className="px-8 md:px-16 py-20 border-b border-gilt-dim">
@@ -114,5 +137,6 @@ export default function Shop() {
       <ProductModal product={selectedProduct} onClose={() => setSelectedProduct(null)} onAddToCart={addToCart} />
       <CartSidebar cart={cart} setCart={setCart} open={cartOpen} onClose={() => setCartOpen(false)} />
     </div>
+    </ErrorBoundary>
   );
 }
