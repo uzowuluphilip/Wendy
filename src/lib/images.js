@@ -76,6 +76,12 @@ export const SERVICE_CATEGORIES = [
   {
     titleKey: 'svc_cat4',
     img: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=900&q=90',
+    images: [
+      '/images/services/facial.jpeg',
+      '/images/services/skin.jpeg',
+      '/images/services/face.jpeg',
+      '/images/services/skintreatment.jpeg',
+    ],
     services: [
       { nameKey: 'svc_s15_name', descKey: 'svc_s15_desc' },
       { nameKey: 'svc_s16_name', descKey: 'svc_s16_desc' },
@@ -99,10 +105,28 @@ export const SERVICE_CATEGORIES = [
   {
     titleKey: 'svc_cat6',
     img: 'https://media.base44.com/images/public/6a031a13a0ec09813060da1c/cb6efcab9_generated_image.png',
+    images: [
+      '/images/services/lashes.png',
+      'https://media.base44.com/images/public/6a031a13a0ec09813060da1c/cb6efcab9_generated_image.png',
+    ],
     services: [
       { nameKey: 'svc_s26_name', descKey: 'svc_s26_desc' },
       { nameKey: 'svc_s27_name', descKey: 'svc_s27_desc' },
       { nameKey: 'svc_s28_name', descKey: 'svc_s28_desc' },
+    ],
+  },
+  {
+    titleKey: 'svc_cat9',
+    img: '/images/services/microblading.jpeg',
+    images: [
+      '/images/services/blading.jpeg',
+      '/images/services/micro.jpeg',
+      '/images/services/microblading.jpeg',
+    ],
+    services: [
+      { nameKey: 'svc_s37_name', descKey: 'svc_s37_desc' },
+      { nameKey: 'svc_s38_name', descKey: 'svc_s38_desc' },
+      { nameKey: 'svc_s39_name', descKey: 'svc_s39_desc' },
     ],
   },
   {
@@ -130,29 +154,38 @@ export const SERVICE_CATEGORIES = [
     img: 'https://media.base44.com/images/public/6a031a13a0ec09813060da1c/12d5d28fa_WhatsAppImage2026-05-22at64605AM.jpg',
     services: [{ nameKey: 'svc_s33_name', descKey: 'svc_s33_desc' }],
   },
+  {
+    titleKey: 'svc_cat8',
+    img: '/images/services/training.jpeg',
+    services: [
+      { nameKey: 'svc_s34_name', descKey: 'svc_s34_desc' },
+      { nameKey: 'svc_s35_name', descKey: 'svc_s35_desc' },
+      { nameKey: 'svc_s36_name', descKey: 'svc_s36_desc' },
+    ],
+  },
 ];
 
 export const SIGNATURE_TREATMENTS = [
-  { number: '01', titleKey: 'st_t1_title', descKey: 'st_t1_desc', img: 'https://media.base44.com/images/public/6a031a13a0ec09813060da1c/6e734c290_generated_image.png' },
-  { number: '02', titleKey: 'st_t2_title', descKey: 'st_t2_desc', img: 'https://media.base44.com/images/public/6a031a13a0ec09813060da1c/82944dbb1_generated_image.png' },
-  { number: '03', titleKey: 'st_t3_title', descKey: 'st_t3_desc', img: 'https://media.base44.com/images/public/6a031a13a0ec09813060da1c/4d61809fd_generated_image.png' },
+  { number: '01', titleKey: 'st_t1_title', descKey: 'st_t1_desc', img: '/images/services/facialmen.jpeg', images: ['/images/services/facialmen.jpeg','/images/services/mencare.jpeg','/images/services/facecare.jpeg'] },
+  { number: '02', titleKey: 'st_t2_title', descKey: 'st_t2_desc', img: '/images/services/hair.jpeg' },
+  { number: '03', titleKey: 'st_t3_title', descKey: 'st_t3_desc', img: '/images/services/massagee.jpeg' },
 ];
 
 export const GALLERY_TEASER_IMAGES = [
-  { src: 'https://media.base44.com/images/public/6a031a13a0ec09813060da1c/94c6a1907_generated_image.png', label: 'Hair Extension Transformation' },
-  { src: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=90', label: 'Color & Gloss Treatment' },
-  { src: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=90', label: 'Bridal Styling' },
+  { src: '/images/services/HairExtension.jpeg', label: 'Hair Extension Transformation' },
+  { src: '/images/services/gross.jpeg', label: 'Color & Gloss Treatment' },
+  { src: '/images/services/brading.jpeg', label: 'Bridal Styling' },
   { src: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&q=90', label: 'Med Spa Glow' },
-  { src: 'https://media.base44.com/images/public/6a031a13a0ec09813060da1c/cba170906_generated_image.png', label: 'Keratin Silk Blowout' },
+  { src: '/images/services/keratin.jpeg', label: 'Keratin Silk Blowout' },
 ];
 
 export const SERVICES_OVERVIEW = [
-  { icon: 'Sparkles', titleKey: 'so_s1_title', subKey: 'so_s1_sub', img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80' },
-  { icon: 'Wind', titleKey: 'so_s2_title', subKey: 'so_s2_sub', img: 'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&q=80' },
-  { icon: 'Droplets', titleKey: 'so_s3_title', subKey: 'so_s3_sub', img: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80' },
-  { icon: 'Zap', titleKey: 'so_s4_title', subKey: 'so_s4_sub', img: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80' },
-  { icon: 'Eye', titleKey: 'so_s5_title', subKey: 'so_s5_sub', img: 'https://media.base44.com/images/public/6a031a13a0ec09813060da1c/ab5e177e9_51569dc129426ed60e90010e9ce38375.jpg' },
-  { icon: 'Heart', titleKey: 'so_s6_title', subKey: 'so_s6_sub', img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80' },
+  { icon: 'Sparkles', titleKey: 'so_s1_title', subKey: 'so_s1_sub', img: '/images/services/extention.jpeg' },
+  { icon: 'Wind', titleKey: 'so_s2_title', subKey: 'so_s2_sub', img: '/images/services/keratin.jpeg' },
+  { icon: 'Droplets', titleKey: 'so_s3_title', subKey: 'so_s3_sub', img: '/images/services/medspa.jpeg' },
+  { icon: 'Zap', titleKey: 'so_s4_title', subKey: 'so_s4_sub', img: '/images/services/wash.jpeg' },
+  { icon: 'Eye', titleKey: 'so_s5_title', subKey: 'so_s5_sub', img: '/images/services/lashes.png' },
+  { icon: 'Heart', titleKey: 'so_s6_title', subKey: 'so_s6_sub', img: '/images/services/body.jpeg' },
 ];
 
 export const TESTIMONIALS = [

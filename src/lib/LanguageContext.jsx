@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createContext, useContext, useState } from 'react';
 
 const LanguageContext = createContext();
@@ -112,11 +113,27 @@ export const translations = {
     svc_s27_name: 'Waxing', svc_s27_desc: 'Full-body waxing using our warm honey-resin formula, gentle enough for sensitive skin. Services include brow shaping, lip, underarm, Brazilian, and full-leg.',
     svc_s28_name: 'Beauty Consultations', svc_s28_desc: 'A private 45-minute session with one of our senior specialists to map your complete beauty journey. Complimentary with any service booking.',
     svc_cat7: 'Injectables & Aesthetic Treatments',
+    svc_cat8: 'Training & Education',
+    svc_cat9: 'Micro Blading',
+    svc_cat10: 'Lip Blush',
+    svc_cat11: 'Lip Blush Variations',
     svc_s29_name: 'Skin Brightening & Hyperpigmentation Treatment', svc_s29_desc: 'Advanced depigmentation protocol targeting dark spots, uneven skin tone and melasma. Combines brightening serums, chemical agents and LED therapy for a visibly luminous, even complexion.',
     svc_s30_name: 'Russian Lip Filler', svc_s30_desc: "The iconic Russian technique using hyaluronic acid filler to create a defined cupid's bow, lifted lip corners and natural projection — without overfilling. Ideal for a pillowy, doe-eyed result.",
     svc_s31_name: 'Profile Balancing — Cheeks · Chin · Lips', svc_s31_desc: 'A comprehensive facial harmony treatment using strategic dermal filler placement across cheekbones, chin and lips. Restores facial symmetry and enhances natural bone structure for a sculpted, balanced profile.',
     svc_s32_name: 'Anti-Wrinkle Injections (Botox)', svc_s32_desc: "Precision neuromodulator injections to smooth crow's feet, forehead lines and frown lines. Our specialist uses micro-dosing techniques for natural, refreshed results — never frozen.",
     svc_s33_name: 'Nasolabial Folds Filler', svc_s33_desc: 'Targeted hyaluronic acid filler to soften the lines running from the nose to the corners of the mouth. Restores facial volume and smooths deep folds for a youthful, rested appearance.',
+    svc_s34_name: 'Hair Extension Application Training', svc_s34_desc: 'Hands-on training in premium hair extension techniques, from tape-in to sew-in, with live application and styling guidance.',
+    svc_s35_name: 'Keratin Treatment Training', svc_s35_desc: 'Professional instruction for keratin smoothing systems, finish techniques, and aftercare to deliver silky, frizz-free results.',
+    svc_s36_name: 'Med Spa Techniques Training', svc_s36_desc: 'Advanced med spa training covering facial protocols, injectables support, skin safety, and client consultation excellence.',
+    svc_s40_name: 'Glossy Finish Lip Blush', svc_s40_desc: 'Semi-permanent tinting technique for a natural, glossy blush look on the lips. Lasts up to 18 months.',
+    svc_s41_name: 'Natural Blush Lip', svc_s41_desc: 'Subtle, natural lip tint focused on enhancing lip tone and definition.',
+    svc_s42_name: 'Full Coverage Lip Blush', svc_s42_desc: 'Saturated lip blush for defined, long-lasting color with a soft matte finish.',
+    svc_s43_name: 'Ombre Lipblush', svc_s43_desc: 'Gradient lip blush technique creating a softly shaded, natural-looking ombré lip tone.',
+    svc_s44_name: 'Tinted Gloss Lip Blush', svc_s44_desc: 'A tinted gloss overlay for added shine and a subtly enhanced lip tint that layers over lip blush.',
+    svc_s45_name: 'Hydrating Lip Blush Overlay', svc_s45_desc: 'A moisturizing overlay treatment to seal color and add a dewy finish after lip blush application.',
+    svc_s37_name: 'Microblading Soft-Brow Design', svc_s37_desc: 'Precision eyebrow shaping and hair-stroke shading for a natural, polished brow with subtle fullness.',
+    svc_s38_name: 'Ombre Powder Brow', svc_s38_desc: 'Soft ombré brow shading for a defined yet wearable finish that lasts longer than traditional tinting.',
+    svc_s39_name: 'Brow Mapping & Touch-Up', svc_s39_desc: 'Custom brow mapping plus follow-up refinement to ensure perfect symmetry, color retention, and long-lasting shape.',
 
     // Shop Page
     shop_eyebrow: 'The Boutique',
@@ -333,11 +350,24 @@ export const translations = {
     svc_s27_name: 'Épilation à la Cire', svc_s27_desc: 'Épilation corps entier avec notre formule miel-résine tiède, douce même pour les peaux sensibles. Sourcils, lèvre, aisselles, brésilien et jambes complètes.',
     svc_s28_name: 'Consultations Beauté', svc_s28_desc: 'Une séance privée de 45 minutes avec l\'une de nos spécialistes seniors pour planifier votre parcours beauté complet. Offerte avec toute réservation de soin.',
     svc_cat7: 'Injectables & Traitements Esthétiques',
+    svc_cat11: 'Variations Blush Lèvres',
     svc_s29_name: 'Traitement Éclat & Hyperpigmentation', svc_s29_desc: 'Protocole de dépigmentation avancé ciblant les taches brunes, le teint irrégulier et le mélasma. Combinaison de sérums éclaircissants, d\'agents chimiques et de luminothérapie LED pour un teint lumineux et uniforme.',
     svc_s30_name: 'Filler Lèvres Russe', svc_s30_desc: 'La technique russe emblématique utilisant un filler à l\'acide hyaluronique pour créer un arc de Cupidon défini, des commissures relevées et une projection naturelle — sans surcharge. Idéale pour un résultat velouté et expressif.',
     svc_s31_name: 'Équilibre du Profil — Joues · Menton · Lèvres', svc_s31_desc: 'Traitement d\'harmonie faciale complète par placement stratégique de fillers dermiques sur les pommettes, le menton et les lèvres. Restaure la symétrie du visage et sublime la structure osseuse naturelle pour un profil sculpté et équilibré.',
     svc_s32_name: 'Injections Anti-Rides (Botox)', svc_s32_desc: 'Injections précises de neuromodulateur pour lisser les pattes d\'oie, les rides du front et les rides du lion. Notre spécialiste utilise des techniques de micro-dosage pour un résultat naturel et reposé — jamais figé.',
     svc_s33_name: 'Filler Plis Nasogéniens', svc_s33_desc: 'Injection ciblée d\'acide hyaluronique pour atténuer les rides partant du nez vers les commissures des lèvres. Restaure le volume facial et lisse les plis profonds pour un teint jeune et reposé.',
+    svc_cat8: 'Formation & Éducation',
+    svc_cat9: 'Microblading',
+    svc_cat10: 'Blush Lèvres',
+    svc_s34_name: 'Formation Pose d\'Extensions', svc_s34_desc: 'Formation pratique aux techniques haut de gamme d\'extensions capillaires, du tape-in au sew-in, avec application en direct et conseils de style.',
+    svc_s35_name: 'Formation Traitement Kératine', svc_s35_desc: 'Instruction professionnelle sur les systèmes de lissage à la kératine, les techniques de finition et les soins pour un résultat soyeux sans frisottis.',
+    svc_s36_name: 'Formation Techniques Med Spa', svc_s36_desc: 'Formation avancée med spa couvrant les protocoles du visage, le soutien aux injectables, la sécurité de la peau et l\'excellence de la consultation client.',
+    svc_s40_name: 'Finition Brillante Blush Lèvre', svc_s40_desc: "Teinte semi-permanente pour un effet blush naturel et brillant sur les lèvres. Tient jusqu'à 18 mois.",
+    svc_s41_name: 'Blush Lèvre Naturel', svc_s41_desc: 'Teinte subtile et naturelle pour rehausser le ton et la définition des lèvres.',
+    svc_s42_name: 'Blush Lèvre Couvrance Complète', svc_s42_desc: 'Blush plus saturé pour une couleur définie et durable avec une finition douce mate.',
+    svc_s37_name: 'Microblading Sourcils Doux', svc_s37_desc: 'Modelage précis des sourcils et ombrage par traits pour un résultat naturel et sophistiqué avec un effet densifiant subtil.',
+    svc_s38_name: 'Sourcils Ombre Poudre', svc_s38_desc: 'Ombre poudrée douce pour un fini défini et modulable, plus durable qu\'une simple teinture.',
+    svc_s39_name: 'Cartographie & Retouche Sourcils', svc_s39_desc: 'Cartographie sur mesure et retouche de suivi pour une symétrie parfaite, une tenue optimale de la couleur et une forme durable.',
 
     // Shop Page
     shop_eyebrow: 'La Boutique',

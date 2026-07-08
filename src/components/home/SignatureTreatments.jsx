@@ -1,12 +1,23 @@
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import GoldButton from '../GoldButton';
 import { useLanguage } from '../../lib/LanguageContext';
 import { SIGNATURE_TREATMENTS } from '../../lib/images';
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '../../components/ui/carousel';
 
 export default function SignatureTreatments() {
   const { t } = useLanguage();
 
   const treatments = SIGNATURE_TREATMENTS;
+  const [carouselApi, setCarouselApi] = useState(null);
+
+  useEffect(() => {
+    if (!carouselApi) return;
+    const interval = setInterval(() => {
+      carouselApi.scrollNext();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [carouselApi]);
 
   return (
     <section className="py-24 bg-[#080808] overflow-hidden">
@@ -32,10 +43,21 @@ export default function SignatureTreatments() {
             className={`flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} min-h-[420px] border-b border-gilt-dim group`}
           >
             <div className="lg:w-1/2 relative overflow-hidden h-64 lg:h-auto">
-              <img
-                src={tr.img} alt={t(tr.titleKey)}
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-              />
+              {tr.images ? (
+                <Carousel setApi={setCarouselApi} opts={{ loop: true }} className="h-full">
+                  <CarouselContent className="h-full">
+                    {tr.images.map((src, idx) => (
+                      <CarouselItem key={src} className="h-full">
+                        <img src={src} alt={`${t(tr.titleKey)} ${idx + 1}`} className="w-full h-full object-cover" />
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious variant="outline" className="hidden md:block" />
+                  <CarouselNext variant="outline" className="hidden md:block" />
+                </Carousel>
+              ) : (
+                <img src={tr.img} alt={t(tr.titleKey)} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+              )}
               <div className="absolute inset-0 bg-obsidian/30 group-hover:bg-obsidian/10 transition-all duration-700" />
               <div className="absolute top-8 left-8 font-playfair text-6xl font-bold text-white opacity-20 select-none">{tr.number}</div>
             </div>

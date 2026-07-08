@@ -1,7 +1,9 @@
-import { useState } from 'react';
+// @ts-nocheck
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
 import GoldButton from '../components/GoldButton';
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from '../components/ui/carousel';
 import { useLanguage } from '../lib/LanguageContext';
 import { SERVICE_CATEGORIES, SERVICES_HERO_IMAGE } from '../lib/images';
 
@@ -31,10 +33,68 @@ function ServiceAccordion({ nameKey, descKey }) {
   );
 }
 
+function CategoryCarousel({ images, alt }) {
+  const [carouselApi, setCarouselApi] = useState(null);
+
+  useEffect(() => {
+    if (!carouselApi) return;
+    const interval = setInterval(() => {
+      carouselApi.scrollNext();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [carouselApi]);
+
+  return (
+    <div className="relative overflow-hidden h-48 lg:h-64">
+      <Carousel setApi={setCarouselApi} opts={{ loop: true }} className="h-full">
+        <CarouselContent className="h-full">
+          {images.map((src, index) => (
+            <CarouselItem key={src} className="h-full">
+              <img src={src} alt={`${alt} ${index + 1}`} className="w-full h-full object-cover" />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious variant="outline" className="hidden md:block" />
+        <CarouselNext variant="outline" className="hidden md:block" />
+      </Carousel>
+      <div className="absolute inset-0 bg-obsidian/20" />
+    </div>
+  );
+}
+
 export default function Services() {
   const { t } = useLanguage();
 
-  const serviceCategories = SERVICE_CATEGORIES;
+  const lipBlushCategory = {
+    titleKey: 'svc_cat10',
+    img: '/images/services/lips.jpeg',
+    images: [
+      '/images/services/lip.jpeg',
+      '/images/services/lips.jpeg',
+    ],
+    services: [
+      { nameKey: 'svc_s40_name', descKey: 'svc_s40_desc' },
+      { nameKey: 'svc_s41_name', descKey: 'svc_s41_desc' },
+      { nameKey: 'svc_s42_name', descKey: 'svc_s42_desc' },
+    ],
+  };
+
+  const lipBlushVariant = {
+    titleKey: 'svc_cat11',
+    img: '/images/services/pink.jpeg',
+    images: [
+      '/images/services/pinklips.jpeg',
+      '/images/services/pink.jpeg',
+    ],
+    services: [
+      { nameKey: 'svc_s43_name', descKey: 'svc_s43_desc' },
+      { nameKey: 'svc_s44_name', descKey: 'svc_s44_desc' },
+      { nameKey: 'svc_s45_name', descKey: 'svc_s45_desc' },
+    ],
+  };
+
+  const serviceCategories = [...SERVICE_CATEGORIES, lipBlushCategory, lipBlushVariant];
 
   return (
     <div className="min-h-screen bg-obsidian pt-20">
@@ -63,11 +123,14 @@ export default function Services() {
           >
             <div className="flex flex-col lg:flex-row gap-16 mb-10">
               <div className="lg:w-72 flex-shrink-0">
-                <div className="relative overflow-hidden h-48 lg:h-64">
-                  <img src={cat.img} alt={t(cat.titleKey)} className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-obsidian/20" />
-                </div>
-
+                {cat.images ? (
+                  <CategoryCarousel images={cat.images} alt={t(cat.titleKey)} />
+                ) : (
+                  <div className="relative overflow-hidden h-48 lg:h-64">
+                    <img src={cat.img} alt={t(cat.titleKey)} className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-obsidian/20" />
+                  </div>
+                )}
               </div>
               <div className="flex-1">
                 <h2 className="font-playfair text-4xl font-bold text-white mb-8">{t(cat.titleKey)}</h2>
